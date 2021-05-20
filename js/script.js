@@ -13,15 +13,15 @@ form.addEventListener('submit', e => {
 
 function checkInputs() {
 
-	if (name === '' || email ==='' || number ==='' || enquiry === ''){
+	if (name.value === '' || email.value ==='' || number.value ==='' || enquiry.value ===''){
 		alert("Fields can not be empty");
-		(name === '') ? name.classList.add("highlight") : '' ;
-		(number === '') ? phone.classList.add("highlight") : '' ;
-		(email === '') ? email.classList.add("highlight") : '' ;
-		(enquiry === '') ? enquiry.classList.add("highlight") : '' ;
+		// (name === '') ? name.classList.add("highlight") : '' ;
+		// (number === '') ? phone.classList.add("highlight") : '' ;
+		// (email === '') ? email.classList.add("highlight") : '' ;
+		// (enquiry === '') ? enquiry.classList.add("highlight") : '' ;
 	} else if (!(isEmail(email))){
 		alert("insert a valid email");
-	} else if (!(isPhone(phone))){
+	} else if (!(isNumber(number))){
 		alert("insert a valid phone number");
 	} else 	{
 		alert("Your enquiry has been sent, we will be in touch shortly");
