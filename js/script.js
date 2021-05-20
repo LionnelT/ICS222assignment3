@@ -7,7 +7,6 @@ const enquiry = document.getElementById('enquiry');
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	checkInputs();
-    console.log("hey");
 });
 
 
@@ -15,15 +14,15 @@ function checkInputs() {
 
 	if (name.value === '' || email.value ==='' || number.value ==='' || enquiry.value ===''){
 		alert("Fields can not be empty");
-		// (name === '') ? name.classList.add("highlight") : '' ;
-		// (number === '') ? phone.classList.add("highlight") : '' ;
-		// (email === '') ? email.classList.add("highlight") : '' ;
-		// (enquiry === '') ? enquiry.classList.add("highlight") : '' ;
-	} else if (!(isEmail(email))){
+		(name.value === '') ? name.classList.add("highlight") : '' ;
+		(number.value === '') ? number.classList.add("highlight") : '' ;
+		(email.value === '') ? email.classList.add("highlight") : '' ;
+		(enquiry.value === '') ? enquiry.classList.add("highlight") : '' ;
+	} else if (!(isEmail(email.value))){
 		alert("insert a valid email");
-	} else if (!(isNumber(number))){
+	} else if (!(isNumber(number.value))){
 		alert("insert a valid phone number");
-	} else 	{
+	}  else 	{
 		alert("Your enquiry has been sent, we will be in touch shortly");
 		name.value = "";
 		number.value = "";
@@ -40,13 +39,11 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-function isPhone(phone) {
+function isNumber(number) {
 	var patt = new RegExp(/^\+?1?\s*?\(?\d{3}(?:\)|[-|\s])?\s*?\d{3}[-|\s]?\d{4}$/);
-	return patt.test(phone);
+	return patt.test(number);
 }
   
- 
-
 
 function clearInput (){
     phone.value="";
@@ -54,4 +51,6 @@ function clearInput (){
     enquiry.value = "";
     name.value ="";
 }
+
+
 
